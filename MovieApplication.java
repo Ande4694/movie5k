@@ -62,13 +62,13 @@ public class MovieApplication{
       }
    }
    
-   public static void printInstructions(){
+public static void printInstructions(){
       System.out.println("\nPress ");
       System.out.println("\t 0 - Print instructions.");
-      System.out.println("\t 1 - Print the movie list.");
-      System.out.println("\t 2 - Add a movie to the list.");
+      System.out.println("\t 1 - Print your favorite movie list.");
+      System.out.println("\t 2 - Add a movie to your favorite movie list.");
       System.out.println("\t 3 - Modify a movie.");
-      System.out.println("\t 4 - Remove movie from list.");
+      System.out.println("\t 4 - Remove movie from your list.");
       System.out.println("\t 5 - Search for movie.");
       System.out.println("\t 6 - Play movie.");
       System.out.println("\t 7 - Quit.");
