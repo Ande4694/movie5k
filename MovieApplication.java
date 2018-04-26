@@ -17,7 +17,7 @@ public class MovieApplication{
      
       while (choice){
       
-         option = scan.nextInt();
+         option = antiJarl();
              
          switch(option){
             
@@ -81,7 +81,7 @@ public class MovieApplication{
    
    public static void modifyMovie(){
       System.out.print("Enter movie number: ");
-      int movieNo = scan.nextInt();
+      int movieNo = antiJarl();
       scan.nextLine();
       System.out.print("Enter new movie: ");
       String newMovie = scan.nextLine();
@@ -90,7 +90,7 @@ public class MovieApplication{
    
    public static void removeMovie(){
       System.out.print("Enter movie number: ");
-      int movieNo = scan.nextInt();
+      int movieNo = antiJarl();
       scan.nextLine();
       movieList.removeMovie(movieNo-1);
    }
