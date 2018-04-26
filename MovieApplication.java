@@ -54,8 +54,12 @@ public class MovieApplication{
                playMovie();
                printInstructions();
                break;
-                  
+               
             case 7:
+               viewStats();
+               printInstructions();
+                  
+            case 8:
                choice = false;
                break;
          }
@@ -71,7 +75,8 @@ public class MovieApplication{
       System.out.println("\t 4 - Remove movie from your list.");
       System.out.println("\t 5 - Search for movie.");
       System.out.println("\t 6 - Play movie.");
-      System.out.println("\t 7 - Quit.");
+      System.out.println("\t 7 - Watched movies.");
+      System.out.println("\t 8 - Quit.");
    } 
    
    public static void addMovie(){
@@ -95,11 +100,25 @@ public class MovieApplication{
       movieList.removeMovie(movieNo-1);
    }
    
+   public static void viewStats()throws IOException{
+      Scanner scan = new Scanner((new File("stats.txt")));
+      while(scan.hasNext()){
+         String movie = scan.next();
+         String stats = "";
+         if(stats.contains(movie)){
+            movie = scan.next();
+         } else {
+            stats = stats+" "+movie;
+         }
+      }
+   }
+   
    
    public static void playMovie()throws IOException{
       Scanner sc = new Scanner(System.in);
       File f = new File("titleFinal4.txt");
       Scanner fs = new Scanner(f);
+      PrintStream stats = new PrintStream("stats.txt");
       
       System.out.print("Type movie id to play:");
       String typedId=sc.next();      
@@ -117,6 +136,8 @@ public class MovieApplication{
          }
          if(id.equals(typedId)){
             System.out.println("Now playing: "+title);
+            stats.print(title);
+            stats.println();
          }
       }
    
@@ -263,7 +284,7 @@ public class MovieApplication{
                     
                   loggedInUser = user;
                   if (loggedInUser == listOfCustomers[4]){
-                     admin = false;
+                     admin = true;
                   }
                
                   break;
