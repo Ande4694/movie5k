@@ -62,7 +62,7 @@ public class MovieApplication{
       }
    }
    
-public static void printInstructions(){
+   public static void printInstructions(){
       System.out.println("\nPress ");
       System.out.println("\t 0 - Print instructions.");
       System.out.println("\t 1 - Print your favorite movie list.");
@@ -126,10 +126,9 @@ public static void printInstructions(){
          }
          if(id.equals(typedId)){
             System.out.println("Now playing: "+title);
-         } else {
-            System.out.println("The id you searched is not in the archives");
          }
       }
+   
       File fa = new File("actors.txt");
       Scanner s = new Scanner(fa);
       String actors = "";
@@ -143,7 +142,8 @@ public static void printInstructions(){
          }
       }
       System.out.println("Actors in this movie: "+actors);
-   } 
+    
+   }
    
    public static void searchMovie()throws IOException{
       Scanner sc = new Scanner(System.in);
@@ -304,12 +304,14 @@ public static void printInstructions(){
       System.out.println("0: Exit");
    }
    
-   public static void antiJarl(){
+   public static int antiJarl(){
       Scanner input = new Scanner(System.in);      
       while (!input.hasNextInt()) {
          input.next();
          System.out.println("Not an integer, try again Jarl..");
       }
+      return input.nextInt();
+      
    }
    
    public static void antiJarlCustom(String text){
