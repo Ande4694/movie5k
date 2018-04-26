@@ -95,15 +95,6 @@ public class MovieApplication{
       movieList.removeMovie(movieNo-1);
    }
    
-   public static void searchForMovie(){
-      System.out.print("Movie to search for: ");
-      String searchMovie = scan.nextLine();
-      if(movieList.findMovie(searchMovie) != null){
-         System.out.println("Found " + searchMovie + " in our movie list.");
-      }else{
-         System.out.println(searchMovie + " is not on the movie list.");
-      } 
-   }
    
    public static void playMovie()throws IOException{
       Scanner sc = new Scanner(System.in);
