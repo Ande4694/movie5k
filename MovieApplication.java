@@ -5,6 +5,10 @@ public class MovieApplication{
 
    private static MovieList movieList = new MovieList();  
    private static Scanner scan = new Scanner(System.in);   
+<<<<<<< HEAD
+   private static boolean admin = false;
+=======
+>>>>>>> f59b5cef649acca34a85311b459ea5a90305363b
    
    public static void main(String[] args)throws IOException{
    
@@ -58,8 +62,14 @@ public class MovieApplication{
             case 7:
                viewStats();
                printInstructions();
+<<<<<<< HEAD
+               break;
+                  
+            case 9:
+=======
                   
             case 8:
+>>>>>>> f59b5cef649acca34a85311b459ea5a90305363b
                choice = false;
                break;
          }
@@ -75,8 +85,15 @@ public class MovieApplication{
       System.out.println("\t 4 - Remove movie from your list.");
       System.out.println("\t 5 - Search for movie.");
       System.out.println("\t 6 - Play movie.");
+<<<<<<< HEAD
+      if(admin){
+         System.out.println("\t 7 - Watched movies.");
+      }
+      System.out.println("\t 9 - Quit.");
+=======
       System.out.println("\t 7 - Watched movies.");
       System.out.println("\t 8 - Quit.");
+>>>>>>> f59b5cef649acca34a85311b459ea5a90305363b
    } 
    
    public static void addMovie(){
@@ -102,6 +119,16 @@ public class MovieApplication{
    
    public static void viewStats()throws IOException{
       Scanner scan = new Scanner((new File("stats.txt")));
+<<<<<<< HEAD
+      ArrayList<String> stats = new ArrayList<String>();
+      while(scan.hasNextLine()){
+         String movie = scan.nextLine();
+         if(!stats.contains(movie)){
+            stats.add(movie);
+         } 
+      }
+      System.out.println(stats);
+=======
       while(scan.hasNext()){
          String movie = scan.next();
          String stats = "";
@@ -111,6 +138,7 @@ public class MovieApplication{
             stats = stats+" "+movie;
          }
       }
+>>>>>>> f59b5cef649acca34a85311b459ea5a90305363b
    }
    
    
@@ -136,7 +164,11 @@ public class MovieApplication{
          }
          if(id.equals(typedId)){
             System.out.println("Now playing: "+title);
+<<<<<<< HEAD
+            stats.append(title);
+=======
             stats.print(title);
+>>>>>>> f59b5cef649acca34a85311b459ea5a90305363b
             stats.println();
          }
       }
@@ -192,8 +224,11 @@ public class MovieApplication{
       String password; 
    
       Customer loggedInUser = null;
+<<<<<<< HEAD
+=======
       boolean admin;
       admin = false;
+>>>>>>> f59b5cef649acca34a85311b459ea5a90305363b
         
       Customer[] listOfCustomers = new Customer[6];       
         
@@ -203,6 +238,111 @@ public class MovieApplication{
       listOfCustomers[3] = new Customer("Gustav","3396");
       listOfCustomers[4] = new Customer("Admin","1");
         
+<<<<<<< HEAD
+   
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            
+      Scanner input = new Scanner(System.in);
+        
+       
+      System.out.println("*** Welcome to Grp. 5000 Netfox ***\n");
+        
+      menuPromptStart();
+   
+      while (!input.hasNextInt()) {
+         input.next();
+         System.out.println("Not an integer; try again.\nNice try Jarl...");
+      }
+   
+      int choice; 
+      do{
+         choice = input.nextInt();
+         switch(choice){
+         
+            case 1:
+               break;
+         
+            case 2:
+            
+               while (choice !=5000){
+                  System.out.println("To Create an account you must type a username and a password\n");
+                  System.out.println("Please type a Username :");
+                  String Username = input.next();
+                  System.out.println("please type a password :");
+                  String Password = input.next();
+                  System.out.println("please type password again :");
+               
+               
+                  if(Password.equals(input.next())){
+                     System.out.println("Credentials Accepted.");
+                     listOfCustomers[5] = new Customer(Username,Password);
+                     choice = 5000;
+                  }
+                  else{
+                     System.out.println("Password did not match, try again.");
+                  }
+               
+               }
+            
+            
+               System.out.println("Account created!\n");
+               menuPromptStart();
+               break;
+         
+            case 0:
+               System.out.println("Have a nice day!");
+               System.exit(0);
+               break;
+         
+            default:
+               System.out.println("Not an integer; try again.");
+               break;
+         
+         }
+      }while(choice !=1);
+         
+         
+   
+      System.out.println("Please type your Username* :");
+      username = br.readLine();   
+      System.out.println("Please type your Password* :");
+      password = br.readLine();
+   
+      try{
+         for (Customer user : listOfCustomers)
+         {
+         
+            if (user.getUsername().equals(username))
+            {
+               
+               if (user.getPassword().equals(password))
+               {
+                    
+                  loggedInUser = user;
+                  if (loggedInUser == listOfCustomers[4]){
+                     admin = true;
+                  }
+               
+                  break;
+               }
+            }
+         }
+      }catch(Exception e){
+         System.out.println("Password did not match, try again.");
+      }
+   
+      if (loggedInUser != null)
+      {
+         System.out.println("User successfully logged in: "+loggedInUser.getUsername());
+      }
+        
+      else
+      {
+         System.out.println("Invalid username or password");
+         MovieApplication.restart();
+      }
+   
+=======
    
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             
@@ -306,6 +446,7 @@ public class MovieApplication{
          MovieApplication.restart();
       }
    
+>>>>>>> f59b5cef649acca34a85311b459ea5a90305363b
    
    }
                 
