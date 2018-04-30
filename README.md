@@ -8,6 +8,5 @@
 - domain model https://drive.google.com/file/d/1LXQloLleeHOPDr6DufAa7Wnk6dwWPJx6/view?usp=sharing
 - sequence diagram https://drive.google.com/file/d/1hgN4cd4enxUIjeqn0-pB31Q_RLjnPi8Y/view?usp=sharing
 - class diagram https://drive.google.com/file/d/1IBjiqrGHqELYpQVXeMeyCvghfyO2ugYU/view?usp=sharing
-- intressent analyse https://docs.google.com/document/d/1yvXdbRDTP45imzbEU44dQR8yGtKqX5SSv6taOQsEiAw/edit?usp=sharing
 - SSD https://drive.google.com/file/d/1SK1icN2gP72Dgbpqur95hCghfTGzsZCm/view?usp=sharing
 # metode navne
